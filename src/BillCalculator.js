@@ -1,4 +1,3 @@
-const { getArea } = require('./AreaUtil');
 const WrongZoneTypeException = require('./WrongZoneTypeException');
 
 class BillCalculator {
@@ -8,7 +7,7 @@ class BillCalculator {
     }
 
     getZoneBillPrice(zone) {
-        const area = getArea(zone);
+        const area = zone.getArea();
         return this.getMaterialPrice(area) + this.getWorkPrice(area, zone.type);
     }
 
